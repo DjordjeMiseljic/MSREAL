@@ -1,0 +1,61 @@
+GDB komande:
+-Da bi se pokrenuo gdb neophodno je prilikom kompajliranja dodati oznaku -g
+	npr: gcc -g -o izvrsni_fajl source_fajl.c
+	gde -g oznacava da ce se prilikom kompajliranja stvoriti dodatni debag fajlovi
+	koje ce gdb(gnu debager) koristiti prilikom debagovanja
+
+-Pokretanje gdb-a se izvrsava kucanjem u komandnu liniju: gdb ime_izvrsnog_fajla
+-gdb se zatvara pomocu naredbe quit
+
+-Najjednostavniji nacin rada sa gdb-om je poziv komande 'run' koja izvrsava citav
+	program na isti nacin kao kada se pozove izvrsni fajl van gdb-a
+	(npr ./ime_izvrsnog_fajla). Ukoliko se pri pozivu run komande program zaglavi
+	(izbaci error) gdb ce obezbediti poruke o gresci, sto pomaze korisniku da
+	pronadje uzrok errora. 
+
+start - komanda koja zapocinje izvrsavanje koda, i postavlja ga na prvu liniju
+	koju moze da izvrsi (ako je gdb u procesu debagovanja nekog fajla komanda
+	start vraca program na pocetak)
+
+list - izlistava sledecih 10 instrukcija sors koda koje trebaju da se izvrse
+[Enter] - ponavlja poslednju naredbu 
+
+step(skraceno s) - komanda koja prolazi i izvrsava liniju po liniju
+
+next(skraceno n) - komanda radi isto sto i step stim sto kada se dodje do izvrsavanje 
+	neke funkcije, ne ulazi se u nju vec se ona samo samo izvrsi u jednom koraku
+
+print(skraceno p) ime_promenljive - ispisuje vrednost promenljive u datom trenutku
+
+x &ime_promenljive - mnogo 'nizi' nacin za pristup promenjivima, u direktnoj
+	vezi sa memorijskom lokacijom. Prikazuje adresu i vrednost promenljive u hex
+	formatu (jedan poziv ispisuje cetiri bajta (ukoliko je operativni sistem
+	64-bitan), ponovan poziv ispisuje sledeca 4 itd) 
+x/b &ime_promenljive - isto kao prethodno samo prikazuje bajt po bajt memorije
+-Buduci da je string pokazivac na memoriju, moze proci naredba 'x string', ali
+	kako bi pristupili promenljivama drugoga tipa (npr int ili double) ne smemo
+	zaboraviti '&'
+
+break(skraceno b) <broj ili ime funkcije> ukoliko se pozove breakpoint sa
+	nekim brojem, gdb ce postaviti breakpoint na liniji sa tim brojem. Ukoliko
+	se break pozove sa imenom funkcije breakpointevi se postavljaju na linijama
+	koje sadrze pozive te funkcije.
+info break - prikazuje sve breakpoint-ove
+
+continue - izvrsava program do prvog breakpoint-a
+
+bt - (backtrace) prikazuje u kojoj se funkciji nalazimo i koja funkcija ju je 
+	pozvala i u kojoj liniji.
+
+set var ime_promenljive=vrednost - promeni vrednost promenljive u toku
+	izvrsavanja programa
+
+frame broj - prosledi se broj frejma (konteksta) kako bi se preslo iz jednog u
+	drugi) Npr ako smo trenutno u podfunkciji, ne vidimo vrednost promenljivih
+	definisanih van nje (npr. u mejnu) pa ako bi to zeleli bilo bi potrebno da predjemo na
+	main frame
+
+	 
+
+
+

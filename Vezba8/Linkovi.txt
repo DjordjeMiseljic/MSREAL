@@ -1,0 +1,16 @@
+-Korisni Linkovi-
+
+Platform devices and drivers (Osnovne strukture za rad sa njima):
+https://lwn.net/Articles/448499/
+https://lwn.net/Articles/448502/
+
+Odlican tutorial za device tree (ima 5 delova) 
+http://xillybus.com/tutorials/device-tree-zynq-1
+
+Digilent tutorial za LED: dizajn IP-ja, pravljenje potrebnih fajlova i drajver za IP. 
+http://www.farnell.com/datasheets/1904568.pdf
+
+Ista stvar kao prethodni link, ovu verziju cemo mi pratiti kada budemo pravili nas IP i spustali na Zybo
+https://github.com/SDU-Embedded/linux_zynq/wiki/Installing-Linux-on-the-ZYBO
+
+

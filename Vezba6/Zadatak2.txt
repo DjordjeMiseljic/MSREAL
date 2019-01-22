@@ -1,0 +1,29 @@
+Kreirati drajver za LIFO (Last In First Out) memorijski bafer za 16 pozitivnih brojeva manjih ili jednakih od 255. 
+
+Upis novih karaktera u bafer, prikazanih u heksadecimalnom formatu, vrsi se komandom:
+echo val1,val2,...valN > /dev/lifo 
+Na primer
+echo "1B,F2,24,0,11" > /dev/lifo ce u LIFO upisati 5 novih vrednosti.
+
+Citanje poslednjeg karaktera iz bafera vrsi se komandom:
+cat  /dev/lifo
+pri cemu je ispis takodje broj u heksadecimalnom formatu. Nakon poziva ove komande na ekranu se prikazuje jedan podataka iz bafera (poslednji upisan u LIFO).
+Za primer od gore: 
+cat /dev/lifo
+> 0x11
+
+Pokusaj upisa vise od 16 vrednosti u bafer, bez citanja u meduvremenu, rezultovace neuspesnim upisom novog podatka u bafer.
+Pokusaj citanja iz praznog bafera rezultuje ispisom "empty".
+
+/***	Dodatak:
+
+1) Pomocu naredbi:
+echo hex > /dev/lifo
+echo dec > /dev/lifo
+podesiti da se promeni format ispisa u heksadecimalni / dekadni
+
+2) Pomocu naredbe
+echo num=n > dev/lifo
+podesiti da se pri citanju umesto samo jednog ispise n brojeva u lifo maniru.
+
+

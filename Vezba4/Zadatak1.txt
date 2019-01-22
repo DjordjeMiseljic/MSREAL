@@ -1,0 +1,8 @@
+ZADATAK1:
+
+Napraviti  aplikaciju pisanu u C programskom jeziku koja komunicira sa LED i tasterima.
+Aplikacija treba da izvrsi impulsno sirinsku modulaciju, pri cemu se pomocu tastera moze kontrolisati jacina osvetljenja.
+Jacina osvetljenja ima 6 nivoa: 0% 20% 40% 60% 80% 100%.
+Nivo osvetljenja je potrebno povecavati / smanjivati pomocu dva tastera, pri cemu jedan taster smanjuje dok drugi taster povecava nivo u koracima od 20%. 
+
+NAPOMENA: Potrebno je izvrsiti softversko diferenciranje kako bi jedan pritisak tastera povecao/smanjio nivo za tacno jedan korak (20%).

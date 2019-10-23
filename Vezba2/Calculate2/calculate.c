@@ -11,4 +11,3 @@ void main (int argc,char** argv)
 	int res = pomnozi(a,b);
 	printf("Rezultat mnozenja je: %d\n",res);
 }
-

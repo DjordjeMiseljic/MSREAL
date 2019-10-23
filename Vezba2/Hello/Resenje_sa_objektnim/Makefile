@@ -7,4 +7,4 @@ hello.o : hello.c
 	gcc -c hello.c
 .PHONY : clean
 clean : 
-	rm hello
+	rm -f hello hello.o
